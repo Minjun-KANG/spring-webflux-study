@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.0.5'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+    implementation 'io.projectreactor:reactor-core:3.5.4'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.auth0:java-jwt:4.4.0'
+    implementation 'com.google.api-client:google-api-client:2.2.0'
+
+
+    //socket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+
+    //aws parameter store
+    implementation 'com.coveo:spring-boot-parameter-store-integration:1.5.0'
+
+
+    //db
+    implementation 'mysql:mysql-connector-java:8.0.32'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    //log
+    implementation 'ca.pjer:logback-awslogs-appender:1.6.0'
+    implementation 'ch.qos.logback:logback-core:1.4.6'
+    testImplementation 'ch.qos.logback:logback-classic:1.4.6'
+
+    //test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
